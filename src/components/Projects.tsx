@@ -121,20 +121,22 @@ const Projects = () => {
                           Code
                         </a>
                       </Button>
-                      <Button
-                        size="sm"
-                        className="bg-gradient-primary hover:opacity-90"
-                        asChild
-                      >
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                      {project.demo && (
+                        <Button
+                          size="sm"
+                          className="bg-gradient-primary hover:opacity-90"
+                          asChild
                         >
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          Demo
-                        </a>
-                      </Button>
+                          <a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            Demo
+                          </a>
+                        </Button>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
