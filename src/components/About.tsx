@@ -1,28 +1,28 @@
-import { MapPin, GraduationCap, Globe, Heart } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { MapPin, GraduationCap, Globe, Heart } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
   const facts = [
     {
       icon: GraduationCap,
-      label: 'Education',
-      value: 'B.Tech CSE (AI), Class of 2027'
+      label: "Education",
+      value: "B.Tech CSE (AI), Class of 2027",
     },
     {
       icon: MapPin,
-      label: 'Location',
-      value: 'Based in India'
+      label: "Location",
+      value: "Based in India",
     },
     {
       icon: Globe,
-      label: 'Languages',
-      value: 'English, Hindi, French (basic), Japanese (spoken)'
+      label: "Languages",
+      value: "English, Hindi, French (A2), Japanese (basic)",
     },
     {
       icon: Heart,
-      label: 'Interests',
-      value: 'Coding · Astronomy · Music · Sports'
-    }
+      label: "Interests",
+      value: "Programming · Astronomy · Music · Sports",
+    },
   ];
 
   return (
@@ -53,10 +53,20 @@ const About = () => {
             <div className="space-y-8 fade-in-up">
               <div className="prose prose-lg text-muted-foreground">
                 <p className="text-lg leading-relaxed mb-6">
-                  I'm <span className="text-primary font-semibold">Icarus</span>, a Computer Science and Engineering student specializing in Artificial Intelligence at MAIT (Reliance Foundation Scholar). I'm passionate about building intelligent systems, designing interactive applications, and helping people learn science and technology in simple ways.
+                  I'm{" "}
+                  <span className="text-primary font-semibold">Harshit</span>, a
+                  Computer Science and Engineering student specializing in
+                  Artificial Intelligence at MAIT and also a (Reliance
+                  Foundation Scholar). I'm passionate about building intelligent
+                  systems, designing interactive applications, and helping
+                  people learn technology and science in simple ways.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  When I'm not coding, you'll find me exploring the cosmos through astronomy, creating educational content, or diving into the latest tech trends. I believe in the power of technology to solve real-world problems and make learning accessible to everyone.
+                  When I'm not coding, you'll find me exploring the cosmos
+                  through astronomy, creating educational content, or diving
+                  into the latest tech trends. I believe in the power of
+                  technology to solve real-world problems and make learning
+                  accessible to everyone.
                 </p>
               </div>
 

@@ -1,32 +1,45 @@
-import { Code, Database, Wrench, Brain } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Code, Database, Wrench, Brain } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 const Skills = () => {
   const skillCategories = [
     {
       icon: Code,
-      title: 'Programming Languages',
-      skills: ['Java', 'C++', 'Python', 'JavaScript', 'TypeScript'],
-      color: 'text-primary'
+      title: "Programming Languages",
+      skills: ["Java", "C++", "Python", "JavaScript", "TypeScript"],
+      color: "text-primary",
     },
     {
       icon: Database,
-      title: 'Databases',
-      skills: ['MySQL', 'MongoDB', 'PostgreSQL', 'Redis'],
-      color: 'text-accent'
+      title: "Databases",
+      skills: ["MySQL", "MongoDB"],
+      color: "text-accent",
     },
     {
       icon: Wrench,
-      title: 'Frameworks & Tools',
-      skills: ['React', 'Node.js', 'TailwindCSS', 'Git', 'VS Code', 'IntelliJ IDEA'],
-      color: 'text-success'
+      title: "Frameworks & Tools",
+      skills: [
+        "React",
+        "Node.js",
+        "TailwindCSS",
+        "Git",
+        "VS Code",
+        "IntelliJ IDEA",
+      ],
+      color: "text-success",
     },
     {
       icon: Brain,
-      title: 'AI & Other',
-      skills: ['TensorFlow', 'Machine Learning', 'Data Structures', 'Algorithms', 'Postman'],
-      color: 'text-primary-glow'
-    }
+      title: "AI & Other",
+      skills: [
+        "TensorFlow",
+        "Machine Learning",
+        "Data Structures",
+        "Algorithms",
+        "Postman",
+      ],
+      color: "text-primary-glow",
+    },
   ];
 
   return (
@@ -47,8 +60,8 @@ const Skills = () => {
           {/* Skills Grid */}
           <div className="grid md:grid-cols-2 gap-8">
             {skillCategories.map((category, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="glass hover-lift skill-card"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -59,7 +72,7 @@ const Skills = () => {
                     </div>
                     <h3 className="text-xl font-semibold">{category.title}</h3>
                   </div>
-                  
+
                   <div className="flex flex-wrap gap-3">
                     {category.skills.map((skill, skillIndex) => (
                       <span
@@ -79,17 +92,21 @@ const Skills = () => {
           <div className="mt-16 text-center fade-in-up">
             <Card className="glass inline-block">
               <CardContent className="p-6">
-                <h4 className="text-lg font-semibold mb-3 text-primary">Currently Exploring</h4>
+                <h4 className="text-lg font-semibold mb-3 text-primary">
+                  Currently Exploring
+                </h4>
                 <div className="flex flex-wrap gap-3 justify-center">
-                  {['Next.js', 'GraphQL', 'Docker', 'Kubernetes', 'AWS'].map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-4 py-2 text-sm bg-gradient-primary text-primary-foreground rounded-full animate-glow-pulse"
-                      style={{ animationDelay: `${index * 0.2}s` }}
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                  {["Next.js", "GraphQL", "Docker", "Kubernetes", "AWS"].map(
+                    (tech, index) => (
+                      <span
+                        key={index}
+                        className="px-4 py-2 text-sm bg-gradient-primary text-primary-foreground rounded-full animate-glow-pulse"
+                        style={{ animationDelay: `${index * 0.2}s` }}
+                      >
+                        {tech}
+                      </span>
+                    )
+                  )}
                 </div>
               </CardContent>
             </Card>

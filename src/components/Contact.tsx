@@ -1,54 +1,62 @@
-import { Mail, Github, Linkedin, Twitter, Instagram, Send, Heart } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { useState } from 'react';
-import { useToast } from '@/hooks/use-toast';
+import {
+  Mail,
+  Github,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Send,
+  Heart,
+} from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
   const socialLinks = [
     {
       icon: Github,
-      label: 'GitHub',
-      href: 'https://github.com',
-      color: 'hover:text-primary'
+      label: "GitHub",
+      href: "https://github.com/St2-18",
+      color: "hover:text-primary",
     },
     {
       icon: Linkedin,
-      label: 'LinkedIn',
-      href: 'https://linkedin.com',
-      color: 'hover:text-blue-400'
+      label: "LinkedIn",
+      href: "https://linkedin.com/in/harshit-sharma-64a62728b",
+      color: "hover:text-blue-400",
     },
     {
       icon: Twitter,
-      label: 'Twitter',
-      href: 'https://twitter.com',
-      color: 'hover:text-blue-300'
+      label: "Twitter",
+      href: "https://x.com/Harshit77117177?t=Seyrxtu2Cm5nQSZGMhIhUw&s=08",
+      color: "hover:text-blue-300",
     },
     {
       icon: Instagram,
-      label: 'Instagram',
-      href: 'https://instagram.com',
-      color: 'hover:text-pink-400'
-    }
+      label: "Instagram",
+      href: "https://instagram.com",
+      color: "hover:text-pink-400",
+    },
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Please fill in all fields",
-        variant: "destructive"
+        variant: "destructive",
       });
       return;
     }
@@ -60,13 +68,15 @@ const Contact = () => {
     });
 
     // Reset form
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: "", email: "", message: "" });
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -81,7 +91,8 @@ const Contact = () => {
             </h2>
             <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
             <p className="text-lg text-muted-foreground mt-6 max-w-2xl mx-auto">
-              Have a project in mind or just want to say hello? I'd love to hear from you!
+              Have a project in mind or just want to say hello? I'd love to hear
+              from you!
             </p>
           </div>
 
@@ -96,14 +107,16 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold">Email</h3>
-                      <p className="text-muted-foreground">Let's discuss your ideas</p>
+                      <p className="text-muted-foreground">
+                        Let's discuss your ideas
+                      </p>
                     </div>
                   </div>
-                  <a 
+                  <a
                     href="mailto:contact@example.com"
                     className="text-primary hover:text-primary-glow transition-colors text-lg font-medium"
                   >
-                    contact@example.com
+                    harshitsharma77117@gmail.com
                   </a>
                 </CardContent>
               </Card>
@@ -120,9 +133,9 @@ const Contact = () => {
                         className={`justify-start h-auto p-4 ${social.color} hover:bg-primary/5`}
                         asChild
                       >
-                        <a 
-                          href={social.href} 
-                          target="_blank" 
+                        <a
+                          href={social.href}
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-center gap-3"
                         >
@@ -141,7 +154,8 @@ const Contact = () => {
                   <div className="flex items-center gap-3 text-primary">
                     <Heart className="w-5 h-5" />
                     <p className="text-sm">
-                      <strong>Fun fact:</strong> I reply to every genuine message within 24 hours!
+                      <strong>Fun fact:</strong> I reply to every genuine
+                      message within 24 hours!
                     </p>
                   </div>
                 </CardContent>
@@ -152,8 +166,10 @@ const Contact = () => {
             <div className="fade-in-up">
               <Card className="glass">
                 <CardContent className="p-8">
-                  <h3 className="text-xl font-semibold mb-6">Send me a message</h3>
-                  
+                  <h3 className="text-xl font-semibold mb-6">
+                    Send me a message
+                  </h3>
+
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <Input
@@ -164,7 +180,7 @@ const Contact = () => {
                         className="bg-muted/50 border-border focus:border-primary"
                       />
                     </div>
-                    
+
                     <div>
                       <Input
                         type="email"
@@ -175,7 +191,7 @@ const Contact = () => {
                         className="bg-muted/50 border-border focus:border-primary"
                       />
                     </div>
-                    
+
                     <div>
                       <Textarea
                         placeholder="Your Message"
@@ -186,7 +202,7 @@ const Contact = () => {
                         className="bg-muted/50 border-border focus:border-primary resize-none"
                       />
                     </div>
-                    
+
                     <Button
                       type="submit"
                       className="w-full bg-gradient-primary hover:opacity-90 text-primary-foreground font-semibold py-6 glow-primary"
@@ -213,7 +229,7 @@ const Contact = () => {
 };
 
 // Console Easter Egg
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
   console.log(`
     🚀 Hey there, fellow developer! 👋
     
@@ -223,7 +239,7 @@ if (typeof window !== 'undefined') {
     Let's build something amazing together! 
     Drop me a line: contact@example.com
     
-    - Icarus ✨
+    - Harshit ✨
   `);
 }
 
