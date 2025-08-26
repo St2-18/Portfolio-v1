@@ -1,5 +1,6 @@
 import { MapPin, GraduationCap, Globe, Heart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import myImage from "@assets/me.jpg";
 
 const About = () => {
   const facts = [
@@ -42,9 +43,14 @@ const About = () => {
             <div className="text-center lg:text-left fade-in-up">
               <div className="relative inline-block mb-8">
                 <div className="w-64 h-64 mx-auto lg:mx-0 rounded-full bg-gradient-primary p-1 glow-primary">
-                  <div className="w-full h-full rounded-full bg-muted flex items-center justify-center text-6xl font-bold gradient-text">
+                  {/* <div className="w-full h-full rounded-full bg-muted flex items-center justify-center text-6xl font-bold gradient-text">
                     IC
-                  </div>
+                  </div> */}
+                  <img
+                    src={myImage}
+                    alt="Harshit"
+                    className="w-full h-full rounded-full object-cover"
+                  />
                 </div>
               </div>
             </div>
