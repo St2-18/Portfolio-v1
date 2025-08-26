@@ -24,7 +24,7 @@ const Projects = () => {
         "A single-player JavaFX implementation of the classic TV show game with banker logic and MySQL storage for final results. Features authentic game mechanics and professional UI design.",
       tech: ["Java", "JavaFX", "MySQL"],
       github: "#",
-      demo: "#",
+      // demo: "#",
       featured: true,
     },
     {
@@ -36,7 +36,7 @@ const Projects = () => {
       tech: ["HTML", "CSS", "JavaScript"],
       github: "#",
       demo: "#",
-      featured: false,
+      featured: true,
     },
   ];
 
