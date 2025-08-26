@@ -27,7 +27,7 @@ The only requirement is having Node.js & npm installed - [install with nvm](http
 
 Follow these steps:
 
-```sh
+```bash
 # Step 1: Clone the repository using the project's Git URL.
 git clone https://github.com/St2-18/Portfolio-v1.git
 
@@ -76,3 +76,9 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide) -->
+
+---
+
+## 👨‍💻 Author
+
+Made with ❤️ by **Harshit**
