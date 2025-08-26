@@ -1,22 +1,23 @@
-import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+// import heroBg from "@/assets/hero-bg.jpg";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState("home");
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'contact', label: 'Contact' },
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "skills", label: "Skills" },
+    { id: "projects", label: "Projects" },
+    { id: "contact", label: "Contact" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map(item => document.getElementById(item.id));
+      const sections = navItems.map((item) => document.getElementById(item.id));
       const scrollPosition = window.scrollY + 100;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -28,14 +29,14 @@ const Navigation = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsOpen(false);
   };
@@ -45,9 +46,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="text-xl font-bold gradient-text">
-            IC
-          </div>
+          <div className="text-xl font-bold gradient-text">Carpe diem</div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -57,8 +56,8 @@ const Navigation = () => {
                 onClick={() => scrollToSection(item.id)}
                 className={`text-sm font-medium transition-colors hover:text-primary ${
                   activeSection === item.id
-                    ? 'text-primary'
-                    : 'text-muted-foreground'
+                    ? "text-primary"
+                    : "text-muted-foreground"
                 }`}
               >
                 {item.label}
@@ -87,8 +86,8 @@ const Navigation = () => {
                   onClick={() => scrollToSection(item.id)}
                   className={`text-left text-sm font-medium transition-colors hover:text-primary ${
                     activeSection === item.id
-                      ? 'text-primary'
-                      : 'text-muted-foreground'
+                      ? "text-primary"
+                      : "text-muted-foreground"
                   }`}
                 >
                   {item.label}

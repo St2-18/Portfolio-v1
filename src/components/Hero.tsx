@@ -100,7 +100,7 @@ const Hero = () => {
             asChild
           >
             <a
-              href="https://github.com"
+              href="https://github.com/St2-18"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -113,7 +113,7 @@ const Hero = () => {
             className="hover:text-primary hover:bg-primary/10"
             asChild
           >
-            <a href="mailto:contact@example.com">
+            <a href="mailto:harshitsharma77117@gmail.com?subject=Hello&body=I%20want%20to%20connect">
               <Mail className="w-6 h-6" />
             </a>
           </Button>

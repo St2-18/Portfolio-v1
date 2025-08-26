@@ -1,6 +1,7 @@
 import { MapPin, GraduationCap, Globe, Heart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import myImage from "@/assets/me.jpg";
+// import heroBg from "@/assets/hero-bg.jpg";
 
 const About = () => {
   const facts = [

@@ -2,6 +2,7 @@ import { ExternalLink, Github, Droplets, Gamepad2, Brain } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+// import heroBg from "@/assets/hero-bg.jpg";
 
 const Projects = () => {
   const projects = [
@@ -12,7 +13,7 @@ const Projects = () => {
       description:
         "An interactive web app with AI-powered scanner (COCO SSD + TensorFlow) and MongoDB integration to calculate the water footprint of products. Features include calculator, multilingual support, games, and live chatbot.",
       tech: ["React", "Node.js", "MongoDB", "TensorFlow", "TailwindCSS"],
-      github: "#",
+      github: "https://github.com/St2-18/AQUASENSE_Draft1.git",
       demo: "#",
       featured: true,
     },
@@ -23,7 +24,7 @@ const Projects = () => {
       description:
         "A single-player JavaFX implementation of the classic TV show game with banker logic and MySQL storage for final results. Features authentic game mechanics and professional UI design.",
       tech: ["Java", "JavaFX", "MySQL"],
-      github: "#",
+      github: "https://github.com/St2-18/Deal-or-No-Deal-Game.git",
       // demo: "#",
       featured: true,
     },
@@ -34,7 +35,7 @@ const Projects = () => {
       description:
         "A fun browser-based game with color sequences and interactive sound effects. Built with vanilla web technologies focusing on smooth animations and user experience.",
       tech: ["HTML", "CSS", "JavaScript"],
-      github: "#",
+      github: "https://github.com/St2-18/Simon-Says-Game.git",
       demo: "#",
       featured: true,
     },
@@ -43,8 +44,10 @@ const Projects = () => {
   const miniProjects = [
     "Tic Tac Toe with GUI (Java)",
     "Alarm App",
-    "Personal Finance Tracker (JavaScript)",
-    "Weather App with API Integration",
+    "Rock Paper Scissors",
+    "To-do List",
+    // "Personal Finance Tracker (JavaScript)",
+    // "Weather App with API Integration",
   ];
 
   return (
@@ -218,7 +221,7 @@ const Projects = () => {
                 asChild
               >
                 <a
-                  href="https://github.com"
+                  href="https://github.com/St2-18"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

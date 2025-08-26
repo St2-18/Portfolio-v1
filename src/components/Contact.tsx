@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+// import heroBg from "@/assets/hero-bg.jpg";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -113,7 +114,7 @@ const Contact = () => {
                     </div>
                   </div>
                   <a
-                    href="mailto:contact@example.com"
+                    href="mailto:harshitsharma77117@gmail.com"
                     className="text-primary hover:text-primary-glow transition-colors text-lg font-medium"
                   >
                     harshitsharma77117@gmail.com

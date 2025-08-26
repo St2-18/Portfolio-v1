@@ -1,5 +1,6 @@
 import { Code, Database, Wrench, Brain } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+// import heroBg from "@/assets/hero-bg.jpg";
 
 const Skills = () => {
   const skillCategories = [
@@ -43,7 +44,18 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 lg:py-32">
+    <section
+      id="skills"
+      className="py-20 lg:py-32"
+      // style={{
+      //   backgroundImage: `url(${heroBg})`,
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      //   backgroundAttachment: "fixed",
+      // }}
+    >
+      {/* Overlay
+      <div className="absolute inset-0 bg-background/80"></div> */}
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
