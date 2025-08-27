@@ -53,6 +53,12 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -62,15 +68,17 @@ const Contact = () => {
         body: JSON.stringify(formData),
       });
 
+      const data = await res.json();
+
       if (res.ok) {
-        alert("Message sent successfully!");
+        alert("Message sent successfully! I'll get back to you soon.");
         setFormData({ name: "", email: "", message: "" }); // clear form
       } else {
-        alert("Something went wrong. Please try again.");
+        alert(data.error || "Something went wrong. Please try again.");
       }
     } catch (error) {
-      console.error(error);
-      alert("Error sending message.");
+      console.error("Error sending message:", error);
+      alert("Error sending message. Please try again.");
     }
   };
 
