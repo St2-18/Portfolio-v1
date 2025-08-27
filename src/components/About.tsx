@@ -63,10 +63,10 @@ const About = () => {
                   I'm{" "}
                   <span className="text-primary font-semibold">Harshit</span>, a
                   Computer Science and Engineering student specializing in
-                  Artificial Intelligence at MAIT and also a (Reliance
-                  Foundation Scholar). I'm passionate about building intelligent
-                  systems, designing interactive applications, and helping
-                  people learn technology and science in simple ways.
+                  Artificial Intelligence at MAIT and a Reliance Foundation
+                  Scholar. I'm passionate about building intelligent systems,
+                  designing interactive applications, and helping people learn
+                  technology and science in simple ways.
                 </p>
                 <p className="text-lg leading-relaxed">
                   When I'm not coding, you'll find me exploring the cosmos

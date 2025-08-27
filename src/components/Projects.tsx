@@ -14,7 +14,7 @@ const Projects = () => {
         "An interactive web app with AI-powered scanner (COCO SSD + TensorFlow) and MongoDB integration to calculate the water footprint of products. Features include calculator, multilingual support, games, and live chatbot.",
       tech: ["React", "Node.js", "MongoDB", "TensorFlow", "TailwindCSS"],
       github: "https://github.com/St2-18/AQUASENSE_Draft1.git",
-      demo: "#",
+      // demo: "#",
       featured: true,
     },
     {
@@ -37,7 +37,7 @@ const Projects = () => {
       tech: ["HTML", "CSS", "JavaScript"],
       github: "https://github.com/St2-18/Simon-Says-Game.git",
       demo: "#",
-      featured: true,
+      featured: false,
     },
   ];
 

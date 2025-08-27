@@ -5,7 +5,12 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   const [currentRole, setCurrentRole] = useState(0);
-  const roles = ["AI Developer", "Science Educator", "Tech Explorer"];
+  const roles = [
+    "AI Developer",
+    "Science Educator",
+    "Tech Explorer",
+    "Web Developer",
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {

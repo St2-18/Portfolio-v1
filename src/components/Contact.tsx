@@ -50,26 +50,28 @@ const Contact = () => {
     },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Please fill in all fields",
-        variant: "destructive",
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
-      return;
+
+      if (res.ok) {
+        alert("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" }); // clear form
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Error sending message.");
     }
-
-    // Simulate form submission
-    toast({
-      title: "Message sent successfully!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
-
-    // Reset form
-    setFormData({ name: "", email: "", message: "" });
   };
 
   const handleInputChange = (
