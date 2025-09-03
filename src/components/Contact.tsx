@@ -174,7 +174,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="fade-in-up">
+            {/* <div className="fade-in-up">
               <Card className="glass">
                 <CardContent className="p-8">
                   <h3 className="text-xl font-semibold mb-6">
@@ -224,7 +224,7 @@ const Contact = () => {
                   </form>
                 </CardContent>
               </Card>
-            </div>
+            </div> */}
           </div>
 
           {/* Console Easter Egg */}
