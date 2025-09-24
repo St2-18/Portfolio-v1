@@ -45,7 +45,7 @@ const Contact = () => {
     {
       icon: Instagram,
       label: "Instagram",
-      href: "https://instagram.com",
+      href: "https://instagram.com/harshit._s7",
       color: "hover:text-pink-400",
     },
   ];
@@ -107,7 +107,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-12 ">
             {/* Contact Info */}
             <div className="space-y-8 fade-in-up">
               <Card className="glass hover-lift">
@@ -166,7 +166,7 @@ const Contact = () => {
                     <Heart className="w-5 h-5" />
                     <p className="text-sm">
                       <strong>Fun fact:</strong> I reply to every genuine
-                      message within 24 hours!
+                      message within 3 hours!
                     </p>
                   </div>
                 </CardContent>
@@ -248,7 +248,7 @@ if (typeof window !== "undefined") {
     That's exactly the kind of curiosity I love in a collaborator.
     
     Let's build something amazing together! 
-    Drop me a line: contact@example.com
+    Drop me a line: harshitsharma77117@gmail.com
     
     - Harshit ✨
   `);

@@ -10,6 +10,7 @@ const Hero = () => {
     "Science Educator",
     "Tech Explorer",
     "Web Developer",
+    "Pew Pew Pew🔫",
   ];
 
   useEffect(() => {
@@ -64,12 +65,16 @@ const Hero = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-            Engineering Student | AI & Software Enthusiast | Developer | Curious
-            Human
+            Engineering Student | AI & Software Enthusiast | Web Developer |
+            Curious Human
           </p>
 
           <div className="text-lg md:text-xl mb-12">
-            <span className="text-primary typing-cursor">
+            {/* <span className="text-primary typing-cursor "> */}
+            <span
+              className="glitch text-primary font-arial"
+              data-text={roles[currentRole]}
+            >
               {roles[currentRole]}
             </span>
           </div>
@@ -124,7 +129,7 @@ const Hero = () => {
           </Button>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <button
             onClick={() => scrollToSection("about")}
@@ -132,7 +137,7 @@ const Hero = () => {
           >
             <ChevronDown className="w-8 h-8" />
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
