@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo } from 'react';
 import { ChevronUp } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,19 +24,17 @@ const ScrollToTop = () => {
     });
   };
 
+  if (!isVisible) return null;
+
   return (
-    <>
-      {isVisible && (
-        <Button
-          onClick={scrollToTop}
-          size="sm"
-          className="fixed bottom-8 right-8 z-50 bg-gradient-primary hover:opacity-90 text-primary-foreground glow-primary animate-slide-in-from-bottom"
-        >
-          <ChevronUp className="w-4 h-4" />
-        </Button>
-      )}
-    </>
+    <button
+      onClick={scrollToTop}
+      className="fixed bottom-8 right-8 z-50 p-3 rounded-full clay-btn flex items-center justify-center animate-in slide-in-from-bottom-8 fade-in duration-300"
+      aria-label="Scroll to top"
+    >
+      <ChevronUp className="w-5 h-5" />
+    </button>
   );
 };
 
-export default ScrollToTop;
+export default memo(ScrollToTop);

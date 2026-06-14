@@ -70,7 +70,10 @@ export default {
 			boxShadow: {
 				'elegant': 'var(--shadow-elegant)',
 				'glow': 'var(--shadow-glow)',
-				'accent-glow': 'var(--shadow-accent-glow)'
+				'accent-glow': 'var(--shadow-accent-glow)',
+				'clay': 'var(--shadow-clay)',
+				'clay-hover': 'var(--shadow-clay-hover)',
+				'clay-active': 'var(--shadow-clay-active)'
 			},
 			transitionTimingFunction: {
 				'spring': 'var(--ease-spring)',

@@ -71,6 +71,11 @@
     --shadow-elegant: 0 4px 24px hsl(220 16% 2% / 0.3);
     --shadow-glow: 0 0 40px hsl(260 84% 65% / 0.2);
     --shadow-accent-glow: 0 0 30px hsl(200 84% 60% / 0.3);
+    
+    /* Claymorphism Shadows — Enhanced */
+    --shadow-clay: 12px 12px 24px rgba(0, 0, 0, 0.5), -10px -10px 20px rgba(255, 255, 255, 0.04), inset 3px 3px 6px rgba(255, 255, 255, 0.08), inset -3px -3px 6px rgba(0, 0, 0, 0.6);
+    --shadow-clay-hover: 16px 16px 32px rgba(0, 0, 0, 0.6), -14px -14px 28px rgba(255, 255, 255, 0.05), inset 3px 3px 6px rgba(255, 255, 255, 0.1), inset -3px -3px 6px rgba(0, 0, 0, 0.7);
+    --shadow-clay-active: inset 8px 8px 16px rgba(0, 0, 0, 0.7), inset -8px -8px 16px rgba(255, 255, 255, 0.04);
 
     /* Animation easings */
     --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -78,6 +83,69 @@
 
     --radius: 0.75rem;
   }
+}
+
+/* === Color Palette Overrides === */
+[data-palette="cyber-teal"] {
+  --primary: 175 84% 45%;
+  --primary-glow: 175 84% 55%;
+  --accent: 220 80% 55%;
+  --accent-glow: 220 80% 65%;
+  --ring: 175 84% 45%;
+  --gradient-primary: linear-gradient(135deg, hsl(175 84% 45%), hsl(220 80% 55%));
+  --gradient-hero: linear-gradient(135deg, hsl(220 16% 5%) 0%, hsl(175 20% 8%) 50%, hsl(220 20% 8%) 100%);
+  --gradient-glow: radial-gradient(circle at 50% 50%, hsl(175 84% 45% / 0.15) 0%, transparent 50%);
+  --shadow-glow: 0 0 40px hsl(175 84% 45% / 0.2);
+  --shadow-accent-glow: 0 0 30px hsl(220 80% 55% / 0.3);
+}
+
+[data-palette="solar-amber"] {
+  --primary: 35 95% 55%;
+  --primary-glow: 35 95% 65%;
+  --accent: 15 90% 55%;
+  --accent-glow: 15 90% 65%;
+  --ring: 35 95% 55%;
+  --gradient-primary: linear-gradient(135deg, hsl(35 95% 55%), hsl(15 90% 55%));
+  --gradient-hero: linear-gradient(135deg, hsl(220 16% 5%) 0%, hsl(35 20% 8%) 50%, hsl(15 20% 8%) 100%);
+  --gradient-glow: radial-gradient(circle at 50% 50%, hsl(35 95% 55% / 0.15) 0%, transparent 50%);
+  --shadow-glow: 0 0 40px hsl(35 95% 55% / 0.2);
+  --shadow-accent-glow: 0 0 30px hsl(15 90% 55% / 0.3);
+}
+
+[data-palette="neon-rose"] {
+  --primary: 330 85% 60%;
+  --primary-glow: 330 85% 70%;
+  --accent: 280 75% 55%;
+  --accent-glow: 280 75% 65%;
+  --ring: 330 85% 60%;
+  --gradient-primary: linear-gradient(135deg, hsl(330 85% 60%), hsl(280 75% 55%));
+  --gradient-hero: linear-gradient(135deg, hsl(220 16% 5%) 0%, hsl(330 20% 8%) 50%, hsl(280 20% 8%) 100%);
+  --gradient-glow: radial-gradient(circle at 50% 50%, hsl(330 85% 60% / 0.15) 0%, transparent 50%);
+  --shadow-glow: 0 0 40px hsl(330 85% 60% / 0.2);
+  --shadow-accent-glow: 0 0 30px hsl(280 75% 55% / 0.3);
+}
+
+[data-palette="matrix-green"] {
+  --primary: 140 80% 50%;
+  --primary-glow: 140 80% 60%;
+  --accent: 170 70% 45%;
+  --accent-glow: 170 70% 55%;
+  --ring: 140 80% 50%;
+  --gradient-primary: linear-gradient(135deg, hsl(140 80% 50%), hsl(170 70% 45%));
+  --gradient-hero: linear-gradient(135deg, hsl(220 16% 5%) 0%, hsl(140 20% 8%) 50%, hsl(170 20% 8%) 100%);
+  --gradient-glow: radial-gradient(circle at 50% 50%, hsl(140 80% 50% / 0.15) 0%, transparent 50%);
+  --shadow-glow: 0 0 40px hsl(140 80% 50% / 0.2);
+  --shadow-accent-glow: 0 0 30px hsl(170 70% 45% / 0.3);
+}
+
+/* Palette transition helper */
+html.palette-transitioning .clay-card,
+html.palette-transitioning .clay-btn,
+html.palette-transitioning .gradient-text,
+html.palette-transitioning .bg-primary,
+html.palette-transitioning .bg-accent,
+html.palette-transitioning .text-primary {
+  transition: all 0.4s ease !important;
 }
 
 @layer base {
@@ -93,6 +161,25 @@
 
   html {
     scroll-behavior: smooth;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.05) 2px,
+      rgba(0, 0, 0, 0.05) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.3;
   }
 }
 
@@ -215,17 +302,51 @@
   .project-image {
     transition: transform 0.4s var(--ease-smooth);
   }
+
+  /* Claymorphism Cards — Enhanced */
+  .clay-card {
+    background: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--card) / 0.85) 100%);
+    border-radius: calc(var(--radius) + 2px);
+    box-shadow: var(--shadow-clay);
+    transition: all 0.3s var(--ease-smooth);
+    border: 1px solid hsl(var(--border) / 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  
+  .clay-card:hover {
+    box-shadow: var(--shadow-clay-hover);
+    transform: translateY(-4px);
+    border-color: hsl(var(--primary) / 0.15);
+  }
+  
+  .clay-card:active {
+    box-shadow: var(--shadow-clay-active);
+    transform: translateY(2px);
+  }
+  
+  .clay-btn {
+    background: var(--gradient-primary);
+    border-radius: calc(var(--radius) + 2px);
+    box-shadow: var(--shadow-clay);
+    transition: all 0.2s var(--ease-smooth);
+    color: white;
+    font-weight: 500;
+    border: 1px solid hsl(var(--primary) / 0.3);
+  }
+  
+  .clay-btn:hover {
+    box-shadow: var(--shadow-clay-hover), 0 0 20px hsl(var(--primary) / 0.2);
+    filter: brightness(1.15);
+  }
+  
+  .clay-btn:active {
+    box-shadow: var(--shadow-clay-active);
+    transform: translateY(2px);
+  }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-  }
-}
+/* Duplicate @layer base removed — already defined above */
 
 .glitch {
   position: relative;
@@ -323,4 +444,38 @@
   100% {
     clip: rect(0, 9999px, 0, 0);
   }
+}
+
+/* Glitch for moving text */
+@keyframes text-glitch-fast {
+  0% { text-shadow: 2px 0 hsl(var(--primary)), -2px 0 hsl(var(--accent)); }
+  25% { text-shadow: -2px 0 hsl(var(--primary)), 2px 0 hsl(var(--accent)); }
+  50% { text-shadow: 2px 2px hsl(var(--primary)), -2px -2px hsl(var(--accent)); }
+  75% { text-shadow: -1px -1px hsl(var(--primary)), 1px 1px hsl(var(--accent)); }
+  100% { text-shadow: 1px -1px hsl(var(--primary)), -1px 1px hsl(var(--accent)); }
+}
+
+.glitch-text-fast {
+  animation: text-glitch-fast 0.2s infinite linear alternate-reverse;
+}
+
+@keyframes sort-pulse {
+  0% { transform: scaleY(1); transform-origin: bottom; }
+  50% { transform: scaleY(0.4); transform-origin: bottom; }
+  100% { transform: scaleY(1.5); transform-origin: bottom; }
+}
+
+@keyframes chaos-spin {
+  0% { transform: rotate(0deg) scale(1) skew(0deg); filter: hue-rotate(0deg) invert(0) blur(0px); }
+  25% { transform: rotate(90deg) scale(0.6) skew(20deg); filter: hue-rotate(90deg) invert(1) blur(4px); }
+  50% { transform: rotate(180deg) scale(1.4) skew(-20deg); filter: hue-rotate(180deg) invert(0) blur(0px); }
+  75% { transform: rotate(270deg) scale(0.3) skew(40deg); filter: hue-rotate(270deg) invert(1) blur(8px); }
+  90% { transform: rotate(350deg) scale(1.1) skew(-10deg); filter: hue-rotate(330deg) invert(0.5) blur(2px); }
+  100% { transform: rotate(360deg) scale(1) skew(0deg); filter: hue-rotate(360deg) invert(0) blur(0px); }
+}
+
+.easter-egg-chaos {
+  animation: chaos-spin 2.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  pointer-events: none;
+  overflow: hidden !important;
 }
