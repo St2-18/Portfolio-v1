@@ -117,7 +117,7 @@ const About = () => {
                     </svg>
                   </div>
                 </div>
-                <span className="absolute -bottom-4 -right-14 text-muted-foreground/20 font-mono text-lg select-none pointer-events-none tracking-[0.5em]">↓ ↓</span>
+                <span className="hidden sm:block absolute -bottom-4 -right-14 text-muted-foreground/20 font-mono text-lg select-none pointer-events-none tracking-[0.5em]">↓ ↓</span>
               </div>
 
               {/* Action Buttons */}
