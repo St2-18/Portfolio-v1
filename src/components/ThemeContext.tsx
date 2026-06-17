@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import React, { createContext, useContext, useState, useLayoutEffect, useCallback } from 'react';
 
-export type PaletteId = 'void-purple' | 'cyber-teal' | 'solar-amber' | 'neon-rose' | 'matrix-green';
+export type PaletteId = 'void-purple' | 'cyber-teal' | 'solar-amber' | 'neon-rose' | 'matrix-green' | 'carbon-onyx' | 'cream-latte';
 
 export interface PaletteInfo {
   id: PaletteId;
@@ -15,6 +15,8 @@ export const PALETTES: PaletteInfo[] = [
   { id: 'solar-amber', name: 'Solar Amber', primary: 'hsl(35, 95%, 55%)', accent: 'hsl(15, 90%, 55%)' },
   { id: 'neon-rose', name: 'Neon Rose', primary: 'hsl(330, 85%, 60%)', accent: 'hsl(280, 75%, 55%)' },
   { id: 'matrix-green', name: 'Matrix Green', primary: 'hsl(140, 80%, 50%)', accent: 'hsl(170, 70%, 45%)' },
+  { id: 'carbon-onyx', name: 'Carbon Onyx', primary: 'hsl(0, 0%, 85%)', accent: 'hsl(0, 0%, 55%)' },
+  { id: 'cream-latte', name: 'Cream Latte', primary: 'hsl(25, 50%, 35%)', accent: 'hsl(35, 40%, 70%)' },
 ];
 
 interface PaletteContextType {
@@ -35,7 +37,7 @@ export const PaletteProvider: React.FC<{ children: React.ReactNode }> = ({ child
     } catch {
       // localStorage may be unavailable
     }
-    return 'void-purple';
+    return 'cyber-teal';
   });
 
   const setPalette = useCallback((id: PaletteId) => {
@@ -47,7 +49,7 @@ export const PaletteProvider: React.FC<{ children: React.ReactNode }> = ({ child
     }
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const root = document.documentElement;
     root.setAttribute('data-palette', palette);
 

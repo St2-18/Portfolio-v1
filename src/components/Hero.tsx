@@ -22,7 +22,7 @@ const MainTitle = memo(() => (
     <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-bold tracking-tight">
       <span className="relative inline-block">
         <span className="absolute -inset-2 bg-gradient-to-r from-primary to-accent blur-2xl opacity-20"></span>
-        <span className="relative bg-gradient-to-r from-white via-primary/80 to-accent/80 bg-clip-text text-transparent drop-shadow-[0_0_15px_hsl(var(--primary)/0.4)]">
+        <span className="relative bg-gradient-to-r from-foreground via-primary/80 to-accent/80 bg-clip-text text-transparent drop-shadow-[0_0_15px_hsl(var(--primary)/0.4)]">
           Software
         </span>
       </span>
@@ -146,13 +146,13 @@ const Hero = () => {
               <GlitchRole />
 
               {/* Description */}
-              <p className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed font-light" data-aos="fade-up" data-aos-delay="1000">
+              <p className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed font-light animate-[fadeInUp_0.8s_ease-out_1s_both]">
                 Data in. Intelligence out. Beautiful UI in between.
                 Making machines smarter and interfaces cleaner. Usually in that order.
               </p>
 
               {/* Tech Stack */}
-              <div className="flex flex-wrap gap-3 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="1200">
+              <div className="flex flex-wrap gap-3 justify-center lg:justify-start animate-[fadeInUp_0.8s_ease-out_1.2s_both]">
                 {TECH_STACK.map((tech, index) => (
                   <div key={index} className="px-4 py-2 rounded-full clay-card text-sm text-muted-foreground hover:text-primary transition-colors">
                     {tech}
@@ -161,13 +161,13 @@ const Hero = () => {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-row flex-wrap gap-4 justify-center lg:justify-start w-full pt-4" data-aos="fade-up" data-aos-delay="1400">
+              <div className="flex flex-row flex-wrap gap-4 justify-center lg:justify-start w-full pt-4 animate-[fadeInUp_0.8s_ease-out_1.4s_both]">
                 <CTAButton href="https://drive.google.com/file/d/1f42UdwRYFW17iwRg6Pob5Pj3jcI7yDCs/view?usp=drivesdk" text="Download CV" icon={Download} />
                 <CTAButton href="#projects" text="Projects" icon={ExternalLink} />
               </div>
 
               {/* Social Links */}
-              <div className="flex gap-4 justify-center lg:justify-start pt-4" data-aos="fade-up" data-aos-delay="1600">
+              <div className="flex gap-4 justify-center lg:justify-start pt-4 animate-[fadeInUp_0.8s_ease-out_1.6s_both]">
                 {SOCIAL_LINKS.map((social, index) => (
                   <SocialLink key={index} {...social} />
                 ))}
